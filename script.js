@@ -9,9 +9,9 @@ const makeTable = (data) =>{
 
   $("#noresults").show()
     $("#noresults").html(data.length+" results found")
-  var tabledata = "<table style='width: 100%'><tr><th style='max-width: 100px'>ID</th><th>Title</th><th>Active</th><th>Platform</th><th>Plan</th></tr>"
+  var tabledata = "<table style='width: 100%'><tr><th style='max-width: 100px'>Title</th><th>Active</th><th>Platform</th><th>Plan</th></tr>"
   data.map((x,id) =>{
-    tabledata += "<tr><td>"+x.ID+"</td><td>"+x.title+"</td><td>"+x.active+"</td><td>"+x.platform+"</td><td>" + x.plan + "</td></i>"
+    tabledata += "<tr><td>"+x.title+"</td><td>"+x.active+"</td><td>"+x.platform+"</td><td>" + x.plan + "</td></i>"
 
 
   })
@@ -61,6 +61,7 @@ $("#submit").click(function(){
   var pltfrm = document.querySelector('#platform').value
   var plant = document.querySelector('#plan').value
 
+//force name to start with capital, drop down the rest of the options
 
   var values = {title: name, active: actv, platform:pltfrm, plan: plant}
   console.log(values)
