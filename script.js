@@ -1,9 +1,10 @@
 const makeTable = (data) =>{
-  $("table").remove() // Remove existing table
+  $("list").remove() // Remove existing table
   $("#noresults").hide()
   if(data.length === 0){
     $("#noresults").show()
     $("#noresults").html("No results found")
+    data = defaultdata;
   }
 
   $("#noresults").show()
@@ -15,9 +16,13 @@ const makeTable = (data) =>{
 
   })
   tabledata+="</table>"
-  //console.log(tabledata)
-  document.getElementById("table").innerHTML = tabledata
+  console.log(tabledata)
+  document.getElementById("list").innerHTML = tabledata
 }
+
+var defaultdata;
+fetch('https://Backlog-Server.mistahskipp1.repl.co/data').then(response => response.json().then(data => {defaultdata = data; makeTable(data)}))
+
 
 $.delete = function(url, data, callback, type){
   if ( $.isFunction(data) ){
