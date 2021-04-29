@@ -62,9 +62,51 @@ $("#submit").click(function(){
   var plant = document.querySelector('#plan').value
 
 //force name to start with capital, drop down the rest of the options
-
+//put code here to splice name and replace first lettter with capital equivalent
   var values = {title: name, active: actv, platform:pltfrm, plan: plant}
   console.log(values)
   window.location.href=window.location.href
   $.post("https://Backlog-Server.mistahskipp1.repl.co/send",values)
 })
+
+
+//styling table attempts
+
+/*
+var table = document.getElementById("list").innerHTML;
+for (var i = 0, row; row = table.rows[i]; i++) {
+    if(table.rows[i] != ""){
+        //use row to access the row cell
+        const style = document.createElement('completed');
+        document.head.appendChild(style);
+        style.sheet.insertRule(`
+            .comp {
+                color: white;
+                background-color: black;
+                font-style: italic;
+            }
+        `);
+
+    }
+   for (var j = 0, col; col = row.cells[j]; j++) {
+     //use col to access the col cell
+   }  
+}
+
+
+/*
+const style = document.createElement('style');
+
+// append to DOM
+document.head.appendChild(style);
+
+
+// insert CSS Rule
+style.sheet.insertRule(`
+    .pizza {
+        color: white;
+        background-color: blue;
+        font-style: italic;
+    }
+`);
+ */ 
