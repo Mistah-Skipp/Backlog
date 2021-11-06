@@ -2,11 +2,10 @@ console.log("page.js loaded");
 const makeTable = (data) => {
     
     var tabledata = "<table style='width: 100%'><tr><th style='max-width: 100px'><tr><th>Game</th><th>Status</th><th>Platform</th><th>Plan</th><th>Notes</th></tr>"
-
+    var debugOut =""
     data.map((x,id)=> {
-        tabledata += "<tr><td>" + x.gameName + "</td><td>" + x.status + "</td><td>" + x.gplat + "</td><td>" + x.gplan + "</td><td>" + x.notes + "</td></tr>"
-    })//FOR DEBUGGING SWAPPED GNOTE FOR ID
-
+        tabledata += "<tr><td>" + x.title + "</td><td>" + x.status + "</td><td>" + x.platform + "</td><td>" + x.plan + "</td><td>" + x.notes + "</td></tr>"
+    })
     tabledata += "</table>"
     document.getElementById("bot").innerHTML = tabledata
 }
@@ -59,5 +58,5 @@ $("#submit").click(function() {
     //console.log(dataVal);
     console.log("data logged");
     window.location.href = window.location.href
-    $.post("https://backlog-Server.mistahskipp.repl.co/send", dataVal);
+    $.post("https://Backlog-Server.mistahskipp.repl.co/send", dataVal);
 })//submit button function
