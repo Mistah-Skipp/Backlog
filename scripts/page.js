@@ -4,7 +4,7 @@ const makeTable = (data) => {
     var tabledata = "<table style='width: 100%'><tr><th style='max-width: 100px'><tr><th>Game</th><th>Status</th><th>Platform</th><th>Plan</th><th>Notes</th></tr>"
     var debugOut =""
     data.map((x,id)=> {
-        tabledata += "<tr><td>" + x.title + "</td><td>" + x.status + "</td><td>" + x.platform + "</td><td>" + x.plan + "</td><td>" + x.notes + "</td></tr>"
+        tabledata += "<tr><td><div id=\"tEdit\">" + x.title + "<\div></td><td><div id=\"sEdit\">" + x.status + "<\div></td><td><div id=\"plEdit\">" + x.platform + "<\div></td><td><div id=\"pnEdit\">" + x.plan + "<\div></td><td><div id=\"nEdit\">" + x.notes + "<\div></td></tr>"
     })
     tabledata += "</table>"
     document.getElementById("bot").innerHTML = tabledata

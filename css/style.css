@@ -16,3 +16,19 @@
     font-family:cursive;
     text-align:center;
 }
+
+#tEdit {
+    color:purple;
+}
+#sEdit {
+    color:green;
+}
+#plEdit {
+    color:orange;
+}
+#pnEdit {
+    color:red;
+}
+#nEdit {
+    color:blue;
+}
