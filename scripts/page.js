@@ -18,15 +18,18 @@ const makeTable = async = (data) => {
         */
         
         //this works but adds the div after the table is populated, needs to happen as the table is being made
+        tabledata += "<tbody><tr><td class=\"colr\"><div id=\"tEdit\">" + x.title  + "<\div></td><td class=\"colr\"><div id=\"sEdit\">" + x.status + "<\div></td><td class=\"colr\"><div id=\"plEdit\">"
         if(x.platform == "Switch"){
-            console.log(x.platform);
-            tabledata += "<div id =\"sColor\">"
+            console.log(x.platform + " div switch set");
+            tabledata += "<div id =\"sColor\">" + x.platform
             sheet.replaceSync(`.colr #sColor {background-color: blue;}`);
             tabledata += "</div>"
             document.adoptedStyleSheets = [sheet];
+        } else{
+            tabledata += x.platform
         }
         //get rid of line below for concept /comment out
-        tabledata += "<tbody><tr><td class=\"colr\"><div id=\"tEdit\">" + x.title  + "<\div></td><td class=\"colr\"><div id=\"sEdit\">" + x.status + "<\div></td><td class=\"colr\"><div id=\"plEdit\">" + x.platform + "<\div></td><td class=\"colr\"><div id=\"pnEdit\">" + x.plan + "<\div></td><td class=\"colr\"><div id=\"nEdit\">" + x.notes + "<\div></td></tr>"
+         tabledata += "<\div></td><td class=\"colr\"><div id=\"pnEdit\">" + x.plan + "<\div></td><td class=\"colr\"><div id=\"nEdit\">" + x.notes + "<\div></td></tr>"
     })
     tabledata += "</tbody></table>"
     document.getElementById("bot").innerHTML = tabledata
