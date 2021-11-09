@@ -4,16 +4,29 @@ const makeTable = async = (data) => {
     
     var tabledata = "<table id = \"botTable \" style='width: 100%'><tr><th style='max-width: 100px'><tr><th>Game</th><th>Status</th><th>Platform</th><th>Plan</th><th>Notes</th></tr>"
     data.map((x)=> {
+        //coloring goes here?
+        /*IDEA
+        -scrap the single statement tabldata, make a check at every single instance (game,status,platform,plan) and give it the respected tag it needs (pc/ps4/switch etc) and then set backgroun colors based off that
+        i.e
+        tabledata += <tbody><tr><td class=\"colr\"><div id=\"sEdit\">
+            if(x.status == correct status)
+                set color
+            if(for each type of status needed)
+
+        repeat similar concept for
+        
+        */
+        
+        //this works but adds the div after the table is populated, needs to happen as the table is being made
         if(x.platform == "Switch"){
             console.log(x.platform);
-            sheet.replaceSync(`.colr #plEdit {background-color: blue;}`);
-            document.adoptedStyleSheets = [sheet];
-        } else if (x.platform == "PC"){
-            console.log(x.platform);
-            sheet.replaceSync(`.colr #plEdit {background-color: red;}`);
+            tabledata += "<div id =\"sColor\">"
+            sheet.replaceSync(`.colr #sColor {background-color: blue;}`);
+            tabledata += "</div>"
             document.adoptedStyleSheets = [sheet];
         }
-        tabledata += "<tbody><tr><td class=\"colr\"><div id=\"tEdit\">" + x.title + "<\div></td><td class=\"colr\"><div id=\"sEdit\">" + x.status + "<\div></td><td class=\"colr\"><div id=\"plEdit\">" + x.platform + "<\div></td><td class=\"colr\"><div id=\"pnEdit\">" + x.plan + "<\div></td><td class=\"colr\"><div id=\"nEdit\">" + x.notes + "<\div></td></tr>"
+        //get rid of line below for concept /comment out
+        tabledata += "<tbody><tr><td class=\"colr\"><div id=\"tEdit\">" + x.title  + "<\div></td><td class=\"colr\"><div id=\"sEdit\">" + x.status + "<\div></td><td class=\"colr\"><div id=\"plEdit\">" + x.platform + "<\div></td><td class=\"colr\"><div id=\"pnEdit\">" + x.plan + "<\div></td><td class=\"colr\"><div id=\"nEdit\">" + x.notes + "<\div></td></tr>"
     })
     tabledata += "</tbody></table>"
     document.getElementById("bot").innerHTML = tabledata
