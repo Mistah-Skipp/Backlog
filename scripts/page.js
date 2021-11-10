@@ -70,3 +70,9 @@ $("#submit").click(function() {
     window.location.href = window.location.href
     $.post("https://Backlog-Server.mistahskipp.repl.co/send", dataVal);
 })//submit button function
+
+
+/*for editing options, make it trigger of onclick of the edit tags
+tEdit == title ,sEdit == status edit
+plEdit == platform, pnEdit == plan, nEdit == notes
+*/

@@ -9,7 +9,7 @@
 body{
     background: #FFCCCC;
     height:auto;
-    min-height:400px;
+
 }
 
 #bot table {
@@ -17,27 +17,32 @@ body{
     background-color: white;
     border-collapse: collapse;
 }
+#bot th{
+    font:bold;
+}
 #bot td, #bot th{
     border-collapse:collapse;
     border: 1px solid black;
+    
 }
 
-/*
+
 #tEdit {
-    color:purple;
+    width:max-content;
+    overflow: auto;
 }
 #sEdit {
-    color:green;
+    
 }
 #plEdit {
-    color:orange;
+
 }
 #pnEdit {
-    color:red;
+
 }
 #nEdit {
-    color:blue;
-}*/
+
+}
 
 #swColor{/*switch cell coloring*/
     background-color: red;
