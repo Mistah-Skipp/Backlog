@@ -44,7 +44,7 @@ const makeTable = (data) => {
              tabledata += x.plan;
          }
          //continue printing
-         tabledata += "<\div></td><td class=\"colr\"><div id=\"nEdit\">" + x.notes + "<\div></td></tr>";
+         tabledata += "<\div></td><td class=\"colr\"><div id=\"nEdit\">" + x.notes + "<img src=\"../img/trashcan.png\" alt=\"del\"><\div></td></tr>";
     })
     tabledata += "</table>";
     document.getElementById("bot").innerHTML = tabledata;

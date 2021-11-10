@@ -14,18 +14,19 @@ body{
 
 #bot table {
     font-family:cursive;
-    background-color: white;
+    background-color: lightgray;
     border-collapse: collapse;
 }
+
 #bot th{
     font:bold;
 }
+
 #bot td, #bot th{
     border-collapse:collapse;
     border: 1px solid black;
     
 }
-
 
 #tEdit {
     width:max-content;
@@ -34,14 +35,19 @@ body{
 #sEdit {
     
 }
+
 #plEdit {
 
 }
+
 #pnEdit {
 
 }
-#nEdit {
 
+#nEdit img{
+    height: 25px;
+    width: 25px;
+    display:inline-block;
 }
 
 #swColor{/*switch cell coloring*/
