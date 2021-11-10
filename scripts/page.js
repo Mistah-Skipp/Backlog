@@ -1,38 +1,54 @@
 console.log("page.js loaded");
-const sheet = new CSSStyleSheet();
-const makeTable = async = (data) => {
+const makeTable = (data) => {
     
-    var tabledata = "<table id = \"botTable \" style='width: 100%'><tr><th style='max-width: 100px'><tr><th>Game</th><th>Status</th><th>Platform</th><th>Plan</th><th>Notes</th></tr>"
+    var tabledata = "<table id = \"botTable \"><tr><th style='max-width: 100px'><tr><th>Game</th><th>Status</th><th>Platform</th><th>Plan</th><th>Notes</th></tr>"
     data.map((x)=> {
-        //coloring goes here?
-        /*IDEA
-        -scrap the single statement tabldata, make a check at every single instance (game,status,platform,plan) and give it the respected tag it needs (pc/ps4/switch etc) and then set backgroun colors based off that
-        i.e
-        tabledata += <tbody><tr><td class=\"colr\"><div id=\"sEdit\">
-            if(x.status == correct status)
-                set color
-            if(for each type of status needed)
-
-        repeat similar concept for
+        tabledata += "<tr><td class=\"colr\"><div id=\"tEdit\">" + x.title  + "<\div></td><td class=\"colr\"><div id=\"sEdit\">"
         
-        */
-        
-        //this works but adds the div after the table is populated, needs to happen as the table is being made
-        tabledata += "<tbody><tr><td class=\"colr\"><div id=\"tEdit\">" + x.title  + "<\div></td><td class=\"colr\"><div id=\"sEdit\">" + x.status + "<\div></td><td class=\"colr\"><div id=\"plEdit\">"
-        if(x.platform == "Switch"){
-            console.log(x.platform + " div switch set");
-            tabledata += "<div id =\"sColor\">" + x.platform
-            sheet.replaceSync(`.colr #sColor {background-color: blue;}`);
-            tabledata += "</div>"
-            document.adoptedStyleSheets = [sheet];
-        } else{
-            tabledata += x.platform
+        // IF STRUCT FOR STATUS
+        if(x.status == "Not Installed"){//Not Installed
+            tabledata += "<div id=\"nStat\">" + x.status + "<\div>";
+        }else if(x.status == "Installed"){//Installed
+            tabledata += "<div id=\"yStat\">" + x.status + "<\div>";
+        }else if(x.status == "Not Bought"){//Not Bought
+            tabledata += "<div id=\"bStat\">" + x.status + "<\div>";
+        }else if(x.status == "Completed"){//Completed
+            tabledata += "<div id=\"cStat\">" + x.status + "<\div>";
+        }else {
+            tabledata += x.status;
+            console.log(x.status);
         }
-        //get rid of line below for concept /comment out
-         tabledata += "<\div></td><td class=\"colr\"><div id=\"pnEdit\">" + x.plan + "<\div></td><td class=\"colr\"><div id=\"nEdit\">" + x.notes + "<\div></td></tr>"
+        //continue printing
+        tabledata += "<\div></td><td class=\"colr\"><div id=\"plEdit\">"
+
+        //IF STRUCT FOR PLATFORM
+        if(x.platform == "Switch"){//Nintedo Switch
+            tabledata += "<div id =\"swColor\">" + x.platform + "</div>";
+        }else if (x.platform == "PS4"){//PS4
+            tabledata += "<div id =\"psColor\">" + x.platform +  "</div>";
+        }else if (x.platform == "PC"){//PC
+            tabledata += "<div id =\"pcColor\">" + x.platform +"</div>";
+        }else{
+            tabledata += x.platform;
+        }
+        //continue printing
+         tabledata += "<\div></td><td class=\"colr\"><div id=\"pnEdit\">";
+
+         //IF STRUCT FOR PLAN
+         if(x.plan == "Casual" ||x.plan == "Casual/Max%" || x.plan == "Casual/100%"){//CASUAL PRIMARY
+             tabledata += "<div id=\"casPL\">" + x.plan + "<\div>";
+         }else if (x.plan == "Max%" || x.plan == "Max%/100%"){//MAX% PRIMARY
+             tabledata += "<div id=\"maxPL\">" + x.plan + "<\div>";
+         }else if (x.plan == "100%"){//100% PRIMARY
+             tabledata += "<div id=\"hunPL\">" + x.plan + "<\div>";
+         }else {
+             tabledata += x.plan;
+         }
+         //continue printing
+         tabledata += "<\div></td><td class=\"colr\"><div id=\"nEdit\">" + x.notes + "<\div></td></tr>";
     })
-    tabledata += "</tbody></table>"
-    document.getElementById("bot").innerHTML = tabledata
+    tabledata += "</table>";
+    document.getElementById("bot").innerHTML = tabledata;
 }//displaying table from db
 
 var defaultdata;
@@ -54,8 +70,3 @@ $("#submit").click(function() {
     window.location.href = window.location.href
     $.post("https://Backlog-Server.mistahskipp.repl.co/send", dataVal);
 })//submit button function
-
-var script = document.createElement('script');
-script.src = "../scripts/color.js";
-script.async = true;
-document.head.appendChild(script);

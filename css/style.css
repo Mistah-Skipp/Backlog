@@ -14,9 +14,15 @@ body{
 
 #bot table {
     font-family:cursive;
-    text-align:center;
+    background-color: white;
+    border-collapse: collapse;
+}
+#bot td, #bot th{
+    border-collapse:collapse;
+    border: 1px solid black;
 }
 
+/*
 #tEdit {
     color:purple;
 }
@@ -31,4 +37,36 @@ body{
 }
 #nEdit {
     color:blue;
+}*/
+
+#swColor{/*switch cell coloring*/
+    background-color: red;
+}
+#psColor{/*PS4 cell coloring*/
+    background-color: blue;
+}
+#pcColor{/*PC cell coloring*/
+    background-color: pink;
+}
+#yStat{/*Yes Status cell coloring*/
+    background-color: #34a853;
+}
+#nStat{/*No Status cell coloring*/
+    background-color: #ea4335;
+}
+#cStat {/*Complete Status cell coloring*/
+    background-color: #fbbc04;
+}
+#bStat{/*Not Bought Status cell coloring*/
+    background-color:black;
+    color:white;
+}
+#casPL{/*Casual | Casual/Max% | Casual/100% cell coloring*/
+    background-color:#32fa4b;
+}
+#maxPL{/*Max% | Max%/100% cell coloring*/
+    background-color:#ff8700;
+}
+#hunPL{/*100% cell coloring*/
+    background-color:#96f0ff;
 }
