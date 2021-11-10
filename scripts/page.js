@@ -1,7 +1,7 @@
 console.log("page.js loaded");
 const makeTable = (data) => {
     
-    var tabledata = "<table id = \"botTable \"><tr><th style='max-width: 100px'><tr><th>Game</th><th>Status</th><th>Platform</th><th>Plan</th><th>Notes</th></tr>"
+    var tabledata = "<table id = \"botTable \"><tr><th>Game</th><th>Status</th><th>Platform</th><th>Plan</th><th>Notes</th></tr>"
     data.map((x)=> {
         tabledata += "<tr><td class=\"colr\"><div id=\"tEdit\">" + x.title  + "<\div></td><td class=\"colr\"><div id=\"sEdit\">"
         
@@ -16,7 +16,6 @@ const makeTable = (data) => {
             tabledata += "<div id=\"cStat\">" + x.status + "<\div>";
         }else {
             tabledata += x.status;
-            console.log(x.status);
         }
         //continue printing
         tabledata += "<\div></td><td class=\"colr\"><div id=\"plEdit\">"
@@ -54,23 +53,6 @@ const makeTable = (data) => {
 var defaultdata;
 fetch('https://backlog-Server.mistahskipp.repl.co/data').then(response => response.json().then(data => {defaultdata = data; makeTable(data)}));
 console.log("Data fetched");
-
-$("#submit").click(function() {
-
-    var dbName = document.querySelector('#gameName').value;
-    var dbStatus = document.querySelector('#status').value;
-    var dbPlat = document.querySelector('#gplat').value;
-    var dbPlan = document.querySelector('#gplan').value;
-    var dbNote = document.querySelector('#gnote').value;
-
-
-    var dataVal = { title: dbName, status: dbStatus, platform: dbPlat, plan: dbPlan , notes: dbNote};
-    //console.log(dataVal);
-    console.log("data logged");
-    window.location.href = window.location.href
-    $.post("https://Backlog-Server.mistahskipp.repl.co/send", dataVal);
-})//submit button function
-
 
 /*for editing options, make it trigger of onclick of the edit tags
 tEdit == title ,sEdit == status edit
