@@ -16,10 +16,12 @@ body{
     font-family:cursive;
     background-color: lightgray;
     border-collapse: collapse;
+    width:max-content;
 }
 
 #bot th{
     font:bold;
+    width:max-content;
 }
 
 #bot td, #bot th{
@@ -33,15 +35,15 @@ body{
     overflow: auto;
 }
 #sEdit {
-    
+    text-align:center;
 }
 
 #plEdit {
-
+    text-align:center;
 }
 
 #pnEdit {
-
+    text-align:center;
 }
 
 #nEdit img{
@@ -81,7 +83,6 @@ body{
 #hunPL{/*100% cell coloring*/
     background-color:#96f0ff;
 }
-
 
 .dbug{
     background: yellow;

@@ -7,7 +7,6 @@ $('#bot').on('click', '#deleteEnt', function () {
     //console.log(title + " == gameName");
     var doDelete = confirm("Delete: " + title);
 
-
     if (doDelete == true) {
         alert("Deleting: " + title);
         var $row = $(this).closest("tr")
@@ -24,10 +23,6 @@ $('#bot').on('click', '#deleteEnt', function () {
     }
 })
 
-$("#top").on('click','#remove', function(){
-    var wipeTable = document.getElementById("")
-
-})
 
 /* 
 for editing entries
