@@ -11,5 +11,9 @@ $("#submit").click(function() {
     //console.log(dataVal);
     console.log("data logged");
     window.location.href = window.location.href
+    if(dbName == ""){
+        alert("Enter Game Name");
+    }else{
     $.post("https://Backlog-Server.mistahskipp.repl.co/send", dataVal);
+    }
 })//submit button function
