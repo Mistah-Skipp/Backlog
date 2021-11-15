@@ -14,6 +14,7 @@ $("#submit").click(function() {
     if(dbName == ""){
         alert("Enter Game Name");
     }else{
-    $.post("https://Backlog-Server.mistahskipp.repl.co/send", dataVal);
+        if(true)
+        {$.post("https://Backlog-Server.mistahskipp.repl.co/send", dataVal);}
     }
 })//submit button function

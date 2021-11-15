@@ -88,3 +88,7 @@ body{
     background: yellow;
 
 }
+
+#editToggle{
+    float:right;
+}

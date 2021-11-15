@@ -23,6 +23,15 @@ $('#bot').on('click', '#deleteEnt', function () {
     }
 })
 
+$('#bot').on('click','#sEdit',function(){
+    $(this).closest("td").toggleClass("dbug");
+    console.log(thisStatus);
+    
+
+    var thisStatus = $(this).closest("td").find("#sEdit").text();
+
+
+})
 
 /* 
 for editing entries
@@ -36,3 +45,9 @@ tEdit == title ,sEdit == status edit
 plEdit == platform, pnEdit == plan, nEdit == notes
 */
 
+/*
+make edit button in bot left of #top, on click it allows editing
+-shows del button, enables dropdowns
+-
+
+ */

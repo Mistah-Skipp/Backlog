@@ -5,30 +5,33 @@ const makeTable = (data) => {
     data.map((x)=> {
         tabledata += "<tr><td><div id=\"tEdit\">" + x.title  + "</div></td><td><div id=\"sEdit\">"
         
-        // IF STRUCT FOR STATUS
-        if(x.status == "Not Installed"){//Not Installed
-            tabledata += "<div id=\"nStat\">" + x.status + "</div>";
-        }else if(x.status == "Installed"){//Installed
-            tabledata += "<div id=\"yStat\">" + x.status + "</div>";
-        }else if(x.status == "Not Bought"){//Not Bought
-            tabledata += "<div id=\"bStat\">" + x.status + "</div>";
-        }else if(x.status == "Completed"){//Completed
-            tabledata += "<div id=\"cStat\">" + x.status + "</div>";
-        }else {
-            tabledata += x.status;
+        // SWITCH STRUCT FOR STATUS
+        switch(x.status){
+            case "Not Installed":
+                tabledata += "<div id=\"nStat\">" + x.status + "</div>";
+                break;
+            case "Not Bought":
+                tabledata += "<div id=\"bStat\">" + x.status + "</div>";
+                break;
+            case "Completed":
+                tabledata += "<div id=\"cStat\">" + x.status + "</div>";
+                break;
+            default:
+                tabledata += "<div id=\"yStat\">" + x.status + "</div>";
         }
         //continue printing
         tabledata += "</div></td><td><div id=\"plEdit\">"
 
-        //IF STRUCT FOR PLATFORM
-        if(x.platform == "Switch"){//Nintedo Switch
-            tabledata += "<div id =\"swColor\">" + x.platform + "</div>";
-        }else if (x.platform == "PS4"){//PS4
-            tabledata += "<div id =\"psColor\">" + x.platform +  "</div>";
-        }else if (x.platform == "PC"){//PC
-            tabledata += "<div id =\"pcColor\">" + x.platform +"</div>";
-        }else{
-            tabledata += x.platform;
+        //SWITCH STRUCT FOR PLATFORM
+        switch(x.platform){
+            case "Switch":
+                 tabledata += "<div id =\"swColor\">" + x.platform + "</div>";
+                 break;
+            case "PS4":
+                 tabledata += "<div id =\"psColor\">" + x.platform + "</div>";
+                 break;
+            default:
+                 tabledata += "<div id =\"pcColor\">" + x.platform + "</div>";
         }
         //continue printing
          tabledata += "</div></td><td><div id=\"pnEdit\">";

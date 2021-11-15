@@ -1,4 +1,5 @@
-$("body").on('click', '#complete', function () {//shows only completed games
+$("body").on('click', '#complete', function () {
+    //shows only completed games
     $("tbody").children().remove();
     console.log("only Completed Games!")
     const makeTable = (data) => {
@@ -113,4 +114,10 @@ $("body").on('click', '#original', function () {//shows normal table again
     }//displaying table from db
     var defaultdata;
     fetch('https://backlog-Server.mistahskipp.repl.co/data').then(response => response.json().then(data => { defaultdata = data; makeTable(data) }));
+})
+
+$("body").on('click', '#editToggle', function () {
+    var test = fetch('https://backlog-Server.mistahskipp.repl.co/pwCheck').then(response => response.json());
+    console.log(test);
+
 })
