@@ -1,0 +1,92 @@
+#bot table {
+    font-family:cursive;
+    background-color: lightgray;
+    border-collapse: collapse;
+    width:max-content;
+}
+
+#bot th{
+    font-weight:bolder;
+    width:max-content;
+}
+
+#bot td, #bot th{
+    border-collapse:collapse;
+    border: 1px solid black;
+    
+}
+#bot div {
+    line-height:45px;
+    height:45px;
+    
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#tEdit {
+    width:max-content;
+    overflow: auto;
+}
+#sEdit {
+    text-align:center;
+}
+
+#plEdit {
+    text-align:center;
+}
+
+#pnEdit {
+    text-align:center;
+}
+
+#nEdit {
+    width:max-content;
+    overflow:visible;
+
+}
+
+#bot img{
+    height: 25px;
+    width: 25px;
+    display:inline-block;
+}
+
+#swColor{/*switch cell coloring*/
+    background-color: red;
+}
+
+#psColor{/*PS4 cell coloring*/
+    background-color: blue;
+}
+
+#pcColor{/*PC cell coloring*/
+    background-color: pink;
+}
+
+#yStat{/*Yes Status cell coloring*/
+    background-color: #34a853;
+}
+
+#nStat{/*No Status cell coloring*/
+    background-color: #ea4335;
+}
+
+#cStat {/*Complete Status cell coloring*/
+    background-color: #fbbc04;
+}
+
+#bStat{/*Not Bought Status cell coloring*/
+    background-color:black;
+    color:white;
+}
+
+#casPL{/*Casual | Casual/Max% | Casual/100% cell coloring*/
+    background-color:#32fa4b;
+}
+
+#maxPL{/*Max% | Max%/100% cell coloring*/
+    background-color:#ff8700;
+}
+
+#hunPL{/*100% cell coloring*/
+    background-color:#96f0ff;
+}

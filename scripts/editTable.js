@@ -23,13 +23,24 @@ $('#bot').on('click', '#deleteEnt', function () {
     }
 })
 
+//STATUS EDIT
 $('#bot').on('click','#sEdit',function(){
+ 
+ 
+ 
+ 
+ 
+ 
+ //DBUG LINES
+    var thisStatus = $(this).closest("tr").find("#sEdit").text();
+    var thisTitle = $(this).closest("tr").find("#tEdit").text();
+    var thisPlat = $(this).closest("tr").find("#plEdit").text();
+    var thisPlan  = $(this).closest("tr").find("#pnEdit").text();
+    var thisNote = $(this).closest("tr").find("#nEdit").text();
+
     $(this).closest("td").toggleClass("dbug");
-    console.log(thisStatus);
-    
-
-    var thisStatus = $(this).closest("td").find("#sEdit").text();
-
+    var dataEnt = {thisTitle, thisStatus, thisPlat, thisPlan, thisNote}
+    console.log(dataEnt);
 
 })
 
@@ -50,4 +61,16 @@ make edit button in bot left of #top, on click it allows editing
 -shows del button, enables dropdowns
 -
 
+
+
+PLAN FOR POPUP
+-fuck the dropdown concept
+-popup window that on click shows
+    -all info about that entry
+    -a form that shows what you want to change based on div clicked
+        --i.e clicking on sEdit shows all status options
+    -cancel button to not edit/ accidental clicks
+        --hopefully remove l8tr with edit button
+-prompt() instead of open()?
+ 
  */
