@@ -1,3 +1,8 @@
+#bot {
+    position:absolute;
+    text-align:left;
+}
+
 #bot table {
     font-family:cursive;
     background-color: lightgray;
@@ -6,7 +11,7 @@
 }
 
 #bot th{
-    font-weight:bolder;
+    font-weight:normal;
     width:max-content;
 }
 
@@ -18,7 +23,6 @@
 #bot div {
     line-height:45px;
     height:45px;
-    
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -43,11 +47,15 @@
     overflow:visible;
 
 }
+#nEdit div {
+    position:relative;
+    float: right;
+}
 
 #bot img{
     height: 25px;
     width: 25px;
-    display:inline-block;
+
 }
 
 #swColor{/*switch cell coloring*/

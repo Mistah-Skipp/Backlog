@@ -3,7 +3,7 @@ const makeTable = (data) => {
     
     var tabledata = "<table id = \"botTable\"><thead><tr><th>Game</th><th>Status</th><th>Platform</th><th>Plan</th><th>Notes</th></tr></thead>"
     data.map((x)=> {
-        tabledata += "<tr><td><div id=\"tEdit\">" + x.title  + "</div></td><td><div id=\"sEdit\">"
+        tabledata += "<tr><td> <div id=\"tEdit\">" + x.title  + "</div></td><td><div id=\"sEdit\">"
         
         // SWITCH STRUCT FOR STATUS
         switch(x.status){

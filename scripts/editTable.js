@@ -23,15 +23,96 @@ $('#bot').on('click', '#deleteEnt', function () {
     }
 })
 
-//STATUS EDIT
-$('#bot').on('click','#sEdit',function(){
- 
- 
- 
- 
- 
- 
- //DBUG LINES
+//ENTRY EDIT
+$('#bot').on('click','#tEdit',function(){
+    $("#bot").children().remove();
+    //remove table
+    var gameEdit = $(this).closest("tr").find("#tEdit").text();
+   $("#bot").append(gameEdit);
+   
+   /* $("#bot").append("<form><table><tr>"+
+    "<th><label for=\"gameName\"> Game Name: </label></th>"+
+    "<th><label for=\"status\"> Status: </label></th>"+
+    "<th><label for=\"gplat\"> Plan: </label></th>"+
+    "<th><label for=\"gplan\"> Platform: </label></th>"+
+    "<th><label for=\"gnote\"> Notes: </label></th></tr><tr>"+
+    "<th>"+gameEdit+
+    "</th><th>status</th><th>plan</th><th>plat</th><th>notes</th>"+
+     "</table> </form>");*/
+    /*<form>
+            <table>
+                <tr><!--Title Row -->
+                    <th><label for="gameName"> Game Name: </label></th>
+                    <th><label for="status"> Status: </label></th>
+                    <th><label for="gplat"> Platform: </label></th>
+                    <th><label for="gplan"> Plan: </label></th>
+                    <th><label for "gnote"> Notes: </label></th>
+                </tr>
+                <tr>
+        <!--Game Name -->
+                    <td><input type="text" id="gameName" value=""></td>
+        <!--Game Status -->
+                    <td><select id="status">
+                    <option value="Installed">Installed </option>
+                    <option value="Not Installed">Not Installed </option>
+                    <option value="Not Bought">Not Bought </option>
+                    <option value="Completed">Completed </option>
+                    </select>
+                    </td>
+        <!--Game Platform -->
+                    <td>
+                    <select id="gplat">
+                        <option value="PC">PC </option>
+                        <option value="PS4">PS4 </option>
+                        <option value="Switch">Switch </option>
+                    </select>
+                    </td>
+        <!--Game Plan -->
+                    <td>
+                        <select id="gplan">
+                            <option value="Casual">Casual </option>
+                            <option value="Casual/Max%">Casual/Max% </option>
+                            <option value="Casual/100%">Casual/100% </option>
+                            <option value="Max%">Max% </option>
+                            <option value="Max%/100%">Max%/100% </option>
+                            <option value="100%">100% </option>
+                        </select>
+                    </td>
+        <!--NOTES ENTRY -->
+                    <td><input type="text" id="gnote" value=""></td>
+                </tr>
+            </table>
+            <button type="submit" id="editSubmit">Submit </button>
+        </form><!--Form to get info for DB -->    */
+    
+    //ON editSubmit send new data to db and change it 
+    
+   /* var dbName = document.querySelector('#gameName').value;
+    var dbStatus = document.querySelector('#status').value;
+    var dbPlat = document.querySelector('#gplat').value;
+    var dbPlan = document.querySelector('#gplan').value;
+    var dbNote = document.querySelector('#gnote').value;
+
+
+    var dataVal = { title: dbName, status: dbStatus, platform: dbPlat, plan: dbPlan , notes: dbNote};
+    //console.log(dataVal);
+    console.log("data logged");
+    window.location.href = window.location.href
+    if(dbName == ""){
+        alert("Enter Game Name");
+    }else{
+        if(true)
+        {$.post("https://Backlog-Server.mistahskipp.repl.co/send", dataVal);}
+    }*/
+})
+
+    
+ //del table, draw only the one selected
+ //display form for updating info
+
+
+
+ /*DBUG LINES
     var thisStatus = $(this).closest("tr").find("#sEdit").text();
     var thisTitle = $(this).closest("tr").find("#tEdit").text();
     var thisPlat = $(this).closest("tr").find("#plEdit").text();
@@ -41,9 +122,7 @@ $('#bot').on('click','#sEdit',function(){
     $(this).closest("td").toggleClass("dbug");
     var dataEnt = {thisTitle, thisStatus, thisPlat, thisPlan, thisNote}
     console.log(dataEnt);
-
-})
-
+*/
 /* 
 for editing entries
 --use edit tags as clickables to edit, idealy dropdown to swap other than notes & title
