@@ -49,7 +49,3 @@ $("body").on('click', '#original', function () {//shows normal table again
     console.log("all Games!")
     fetch('https://backlog-Server.mistahskipp.repl.co/data').then(response => response.json().then(data => {defaultdata = data; makeTable(data)}));
 })
-
-$("body").on('click', '#editToggle', function () { 
-    console.log("Click!");
-})

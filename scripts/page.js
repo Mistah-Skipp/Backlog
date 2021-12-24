@@ -47,7 +47,7 @@ const makeTable = (data) => {
              tabledata += x.plan;
          }
          //continue printing
-         tabledata += "</div></td><td><div id=\"nEdit\">" + x.notes + "<div id =\"deleteEnt\"><img src=\"../img/trashcan.png\" alt=\"del\"></div></div></td></tr>";
+         tabledata += "</div></td><td><div id=\"nEdit\">" + x.notes + "&emsp;<div id =\"deleteEnt\"><img src=\"../img/trashcan.png\" alt=\"del\"></div></div></td></tr>";
     })
     tabledata += "</table>";
     document.getElementById("bot").innerHTML = tabledata;
@@ -66,6 +66,22 @@ $.delete = function(url, data, callback, type){
   return $.ajax({
     url: url,
     type: 'DELETE',
+    success: callback,
+    data: data,
+    contentType: type
+  });
+}
+
+$.put = function(url, data, callback, type){
+  if ( $.isFunction(data) ){
+    type = type || callback,
+    callback = data,
+    data = {}
+  }
+ 
+  return $.ajax({
+    url: url,
+    type: 'PUT',
     success: callback,
     data: data,
     contentType: type
