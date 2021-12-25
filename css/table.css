@@ -4,7 +4,7 @@
 }
 
 #bot table {
-    font-family:cursive;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: lightgray;
     border-collapse: collapse;
     width:max-content;
@@ -47,10 +47,6 @@
     overflow:visible;
 
 }
-#nEdit div {
-    position:relative;
-    float: right;
-}
 
 #bot img{
     height: 25px;
@@ -59,15 +55,15 @@
 }
 
 #swColor{/*switch cell coloring*/
-    background-color: red;
+    background-color: #e61926;
 }
 
 #psColor{/*PS4 cell coloring*/
-    background-color: blue;
+    background-color: #006FCD;
 }
 
 #pcColor{/*PC cell coloring*/
-    background-color: pink;
+    background-color: #ffa0ed;
 }
 
 #yStat{/*Yes Status cell coloring*/

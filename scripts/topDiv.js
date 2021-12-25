@@ -4,7 +4,7 @@ $("body").on('click', '#complete', function () {
     console.log("only Completed Games!")
     const makeTable = (data) => {
 
-        var tabledata = "<table id = \"botTable\"><thead><tr><th>Game</th><th>Status</th><th>Platform</th><th>Plan</th><th>Notes</th></tr></thead>"
+        var tabledata = "<table id = \"botTable\"><thead><tr><th>Game</th><th>Status</th><th>Platform</th><th>Plan</th><th colspan=\"2\">Notes</th></tr></thead>"
         data.map((x) => {
             if (x.status == "Completed") {
 
@@ -35,7 +35,7 @@ $("body").on('click', '#complete', function () {
                     tabledata += x.plan;
                 }
                 //continue printing
-                tabledata += "</div></td><td><div id=\"nEdit\">" + x.notes + "<div id =\"deleteEnt\"><img src=\"../img/trashcan.png\" alt=\"del\"></div></div></td></tr>";
+                tabledata += "</div></td><td><div id=\"nEdit\">" + x.notes + "&emsp;</div></td><td><div id =\"deleteEnt\"><img src=\"../img/trashcan.png\" alt=\"del\"></div></td></tr>";
             }
         })
         tabledata += "</table>";

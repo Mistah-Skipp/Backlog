@@ -5,16 +5,14 @@ $("#submit").click(function() {
     var dbPlat = document.querySelector('#gplat').value;
     var dbPlan = document.querySelector('#gplan').value;
     var dbNote = document.querySelector('#gnote').value;
-
-
     var dataVal = { title: dbName, status: dbStatus, platform: dbPlat, plan: dbPlan , notes: dbNote};
     //console.log(dataVal);
     console.log("data logged");
-    window.location.href = window.location.href
     if(dbName == ""){
         alert("Enter Game Name");
     }else{
         if(true)
         {$.post("https://Backlog-Server.mistahskipp.repl.co/send", dataVal);}
+        window.location.href = window.location.href
     }
 })//submit button function
