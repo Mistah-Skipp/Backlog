@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Scuffed.FM</title>
+	<link href="../css/style.css" rel="stylesheet" type "text/css">
+
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+	 crossorigin="anonymous"></script>
+    <script src="../sfmScripts/lastfm.api.cache.js"></script>
+    <script src="../sfmScripts/lastfm.api.js"></script>
+    <script src="../sfmScripts/lastfm.api.md5.js"></script>
+    <script src="../sfmScripts/test.js"></script>
+
+	<script id="lastfmTemplateArtists" type="text/x-jsrender">
+        <div id="{{:mbid}}" class="artist">
+            <a href="{{:url}}" rel="nofollow" target="_blank"><img src="{{:image[2]["#text"]}}" alt="{{:name}}" /><b>{{:name}}:</b></a>
+        </div>
+    </script>
+    <script id="lastfmTemplateArtistInfo" type="text/x-jsrender">
+        <div class="artist_info">
+            <a href="{{:url}}" rel="nofollow" target="_blank"><b>{{:name}}:</b><img src="{{:image[3]["#text"]}}" alt="{{:name}}" /></a>
+            <div><noindex>
+                {{:bio.content}}
+            </noindex></div>
+        </div>
+    </script>
+    <script id="lastfmTemplateTracks" type="text/x-jsrender">
+        {{if image}}
+        <div id="{{:mbid}}" class="track">
+            <a href="{{:url}}" rel="nofollow" target="_blank"><img src="{{:image[0]["#text"]}}" /><b>{{:name}}:</b></a>
+        </div>
+        {{/if}}
+    </script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+
+
+
+
+<body>
+    <div class="content-main">
+        <div class="content-body">
+            <h2>Top artists</h2>
+            <div class="content-body-inner" id="top_artists"></div>
+        </div>
+        <div class="content-body">
+            <h2>Top artist</h2>
+            <div class="content-body-inner" id="top_artist"></div>
+        </div>
+        <div class="content-body">
+            <h2>Top tracks</h2>
+            <div class="content-body-inner" id="top_tracks"></div>
+        </div>
+    </div>
+</body>
+
+  <footer> <a href="../index.html">Home</a></footer>
+
+    </html>
